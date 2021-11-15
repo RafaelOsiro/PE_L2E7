@@ -50,83 +50,19 @@ int main()
 
     size = sizeof(fullName)/sizeof(fullName[0]);
 
-    do
-    {
-        messageTitle();
-        messageMenu();
-        option = functionOptionInput();
+   
+    messageTitle();
 
-        switch (option)
-        {
-        case 1:
-            system("cls");
-            quantityOfError = 0;
-            
-            functionInputString(speech, size, 1);
-            functionInputString(fullName, size, 2);
-            functionUpString(fullName);
-            functionFormateString(fullName, speech);
+    system("cls");
+    quantityOfError = 0;
 
-            messageName(fullName);
-            break;
-        
-        case 2:
-            system("cls");
-            quantityOfError = 0;
-            
-            do
-            {
-                messageConfirmExit();
-                option = functionOptionInput();
+    functionInputString(speech, size, 1);
+    functionInputString(fullName, size, 2);
+    functionUpString(fullName);
+    functionFormateString(fullName, speech);
+    messageName(fullName);
+    sleep(10);
 
-                if (option == 1)
-                {
-                    exitValidation = true;
-                    validation = true; 
-                }
-                else if(option == 2)
-                {
-                    exitValidation = true;
-                    validation = false;
-                }
-                else
-                {
-                    exitValidation = false;
-                    system("cls");
-                    quantityOfError++;
-                    errorMessageInput(quantityOfError, 1);
-
-                    if (quantityOfError == 3)
-                    {
-                        errorExit();
-                        exit(EXIT_FAILURE);
-                    }    
-                }
-
-            } while (exitValidation == false);
-
-
-            system("cls");
-            quantityOfError = 0;
-            
-            break;
-
-        default:
-            system("cls");
-            quantityOfError++;
-            errorMessageInput(quantityOfError, 1);
-
-            if (quantityOfError == 3)
-            {
-                errorExit();
-                exit(EXIT_FAILURE);
-            }
-            break;
-        }
-    
-    } while (validation == false);
-    
-    messageExit();
     exit(EXIT_SUCCESS);
 }
 
@@ -186,7 +122,7 @@ void messageExit()
 //  MESSAGE TO PRINT THE NAMES
 void messageName(char *text)
 {      
-    printf("%s\n", text);
+    printf("\n\n\n\n\n%s\n", text);
 }
 
 //! ERROR MESSAGES OF THE SYSTEM ______________________________________________________________________________
